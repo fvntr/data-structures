@@ -2,8 +2,8 @@ var Stack = function() {
   // Hey! Rewrite in the new style. Your code will wind up looking very similar,
   // but try not not reference your old code in writing the new style.
   
-  //a new stack will point to the stackMethods methods
-  var stack = Object.create(stackMethods);
+  //a new stack will point to the Stack.prototype methods
+  var stack = Object.create(Stack.prototype);
 
   //this represnts the "place" where items are stored on the stack 
   stack.storage = {};
@@ -17,17 +17,16 @@ var Stack = function() {
 
 var stackMethods = {};
 
-
-stackMethods.size = function(){
+Stack.prototype.size = function(){
   //this refers to the specific instance of the stack that is calling this method
   return this.indexOfLastItem;
 }
-stackMethods.push = function(value){
+Stack.prototype.push = function(value){
   //this refers to the specific instance of the stack that is calling this method
   this.indexOfLastItem++;
   return this.storage[this.indexOfLastItem] = value;
 }
-stackMethods.pop = function(){
+Stack.prototype.pop = function(){
   //this refers to the specific instance of the stack that is calling this method
   if(this.indexOfLastItem > 0){
     this.indexOfLastItem--;

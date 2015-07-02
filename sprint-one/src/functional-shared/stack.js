@@ -14,8 +14,12 @@ var Stack = function() {
   //sets the stack size to zero when a new stack is instanciated
   stack.indexOfLastItem = 0;
 
+  stack.size = stackMethods.size;
+  stack.push = stackMethods.push;
+  stack.pop = stackMethods.pop;
+  
   //this sends the stack into the specified stackMethod(either push or pop)
-  extend(stack, stackMethods)
+  // extend(stack, stackMethods);
 
 
   //this return the stack, which is an objects. All properties are functions.
