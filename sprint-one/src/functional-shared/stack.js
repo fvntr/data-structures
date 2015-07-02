@@ -41,8 +41,8 @@ stackMethods.pop = function(){
   //this refers to the specific instance of the stack that is calling this method
   if(this.indexOfLastItem > 0){
     this.indexOfLastItem--;
-    return this.storage[this.indexOfLastItem+1];
   }
+    return this.storage[this.indexOfLastItem+1];
 }
 
 var extend = function(copyTo, copyFrom) {
