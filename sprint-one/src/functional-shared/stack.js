@@ -11,35 +11,35 @@ var Stack = function() {
   // cannot impliment the next line, we think the compiler will choke
   // var size = 0;
 
+  //sets the stack size to zero when a new stack is instanciated
+  stack.indexOfLastItem = 0;
 
-  stack.result = 0;
-  stack.add = stackMethods.add;
+  //this sends the stack into the specified stackMethod(either push or pop)
+  extend(stack, stackMethods)
 
-  stack.size = stackMethods.size;
-  
-  //need to make these
-  stack.push = stackMethods.push;
-  stack.pop = stackMethods.pop;
-
+  //this return the stack, which is an objects. All properties are functions.
   return stack;
 }  
 
 
-
+//this contains all the functions on the stack
 var stackMethods = {};
 
 stackMethods.size = function(){
-  return this.result;
+  return this.indexOfLastItem;
 }
 
 stackMethods.push = function(value){
-  this.result++;
-  console.log(this.storage)
-  return this.storage[this.result] = value;
+  this.indexOfLastItem++;
+  console.log('this.indexOfLastItem in push:', this.indexOfLastItem);
+  return this.storage[this.indexOfLastItem] = value;
 }
 
 stackMethods.pop = function(){
-  return this.result;
+  if(this.indexOfLastItem > 0){
+    this.indexOfLastItem--;
+    return this.storage[this.indexOfLastItem+1];
+  }
 }
 
 var extend = function(copyTo, copyFrom) {
