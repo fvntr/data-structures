@@ -27,25 +27,40 @@ var LinkedList = function(){
 
   list.addToTail = function(value){
     
+    var pod = Node(value); 
+
     if(list.tail === null){
       list.head = Node(value);
+
     } else {
       //update the current tail node to point to (ie the node.next value on that node should be) the new value that is being passed in and will become the new tail node
-      list.tail.next = Node(value);
+      
+      console.log("next before :", list.tail.next);
+      list.tail.next = pod;
+      console.log("next after :", list.tail.next);
     };
-    
-    list.tail = Node(value);
+    // console.log("next before :", list.tail);
+    list.tail = pod;
+    // console.log("next after :", list.tail);
   };
 
   list.removeHead = function(){
 
-    list.head = 
-    //list.head = Node().next;
-    //find item pointing to head
-    //relabel that item as head
-    //then remove head
+    //remove first node in list
+    //return value
+    //should remove the head from the list when removeHead is called
 
-    console.log('Node(value) :', Node[value]);
+
+    var temp = list.head.value; 
+
+    // console.log("before", list.head.next);
+    // console.log("before list", list);
+
+    //console.log("before", "head:", list.head, "tail:", list.tail);
+    list.head = list.head.next;
+    // console.log("after", "head:", list.head, "tail:", list.tail);
+    //console.log("after", list.head);
+    return temp.value; 
 
   };
 
