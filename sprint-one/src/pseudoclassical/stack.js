@@ -26,3 +26,4 @@ Stack.prototype.pop = function(){
   return this.storage[this.indexOfLastItem+1];
 }
 
+//
