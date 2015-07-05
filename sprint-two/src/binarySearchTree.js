@@ -38,9 +38,6 @@ BinarySearchTree.prototype.insert = function (value){
 
 BinarySearchTree.prototype.contains = function (target){
 
-  console.log('target ', target);
-  console.log('this.value ', this.value);
-
   if (target === this.value){
     return true;
  
@@ -61,8 +58,19 @@ BinarySearchTree.prototype.contains = function (target){
   } 
 };  
 
-BinarySearchTree.prototype.depthFirstLog = function (cb){
+BinarySearchTree.prototype.depthFirstLog = function(cb){
+	// node = node || 
 
+	cb(this.value);
+
+
+  if (this.right){
+    this.right.depthFirstLog(cb);
+  } 
+
+  if (this.left){
+		this.left.depthFirstLog(cb);  
+	} 
 
 }; 
 
