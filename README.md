@@ -1,2 +1,3 @@
-#data-structures
-This is a project I completed as a student at [Telegraph Academy](http://telegraphacademy.com). This project was worked on with a pair.
+#js-data-structures
+
+This is a compilation of common data structures built in JS
